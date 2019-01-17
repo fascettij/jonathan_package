@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 import rospy
-from beginner_tutorials.msg import Person
+from jonathan_package.msg import Num
 
 def callback(data):
-    rospy.loginfo("%s is age: %d" % (data.name, data.age))
+    rospy.loginfo("%s is age: %d" % (data.firstInt, data.secondInt))
 
 def listener():
-    rospy.init_node('custom_listener', anonymous=True)
-    rospy.Subscriber("custom_catter", Person, callback)
+    rospy.init_node('message_listener', anonymous=True)
+    rospy.Subscriber("message_receiver", Num, callback)
 
     # spin() simply keeps python from exiting until this node is stopped
     rospy.spin()

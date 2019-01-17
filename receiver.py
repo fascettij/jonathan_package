@@ -2,9 +2,10 @@
 
 import rospy
 from std_msgs.msg import String
+from jonathan_package import Num
 
 def callback(data):
-	print(data.data)
+	print(data.firstInt + data.secondInt)
 
 def listener():
 
@@ -14,8 +15,8 @@ def listener():
 	# will choose a unique name for our listener' node so
 	# that multiple listeners can run simultaneously.
 
-	rospy.init_node('receiver', anonymous=True)
-	rospy.Subscriber("catter", String, callback)
+	rospy.init_node('adddddeeeerrr', anonymous=True)
+	rospy.Subscriber("to_add", String, callback)
 
 	# spin() simply keeps python from exiting until this node is stopped
 	rospy.spin()
